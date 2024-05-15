@@ -35,5 +35,7 @@ then
     echo "Error al crear la contrasenya"
     exit 1
 fi
+
+
 echo "Usuari ${USERNAME} creat correctament"
 exit 0
