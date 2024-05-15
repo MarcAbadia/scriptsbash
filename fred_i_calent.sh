@@ -19,10 +19,10 @@ while [ $intentos -gt 0 ]; do
         echo "Calent!"
     else
         echo "Eureka!"
-        exit 0  # Sale del script si el número es adivinado correctamente
+        exit 0  # Sale del script
     fi
 
-    # Decrementa el contador de intentos
+    # elimina el contador de intentos
     intentos=$((intentos - 1))
 
     echo "Et queden $intentos intents."
