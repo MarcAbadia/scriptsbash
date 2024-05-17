@@ -1,11 +1,14 @@
 #!/bin/bash
 
 read -p "Introduce un número: " NUMERO
-BLANCO=0
-
+BLANCO=1
+TOTAL=0
 
 while [[ $BLANCO -le NUMERO ]]
 do
-    echo "$BLANCO"
+    TOTAL=$((TOTAL+BLANCO))
     BLANCO=$((BLANCO+1))
+    echo "$BLANCO + $TOTAL"
 done
+
+echo "El total es: $TOTAL"
