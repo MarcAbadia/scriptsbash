@@ -37,6 +37,9 @@ if [[ ${?} -ne 0 ]]; then
     exit 1
 fi
 
+sudo chage -d 0 ${USERNAME}
+
+
 echo "Usuari ${USERNAME} creat correctament"
 echo "Contraseña: ${PASSWORD}"
 echo "Host: ${HOSTNAME}"
