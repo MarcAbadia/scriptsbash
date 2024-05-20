@@ -21,7 +21,7 @@ USERNAME=${2}
 PASSWORD=${3}
 
 echo "Creant usuari ${USERNAME}"
-useradd -c  "${FULL_NAME}" -m ${USERNAME}
+useradd -c  "${FULL_NAME}" -m ${USERNAME} > dev/null
 
 if [[ ${?} -ne 0 ]]
 then
