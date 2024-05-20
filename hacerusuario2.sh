@@ -13,6 +13,8 @@ read -p "Introduce el nombre de usuario: " USERNAME
 # Genera una contraseña aleatoria
 PASSWORD=$(date +%s%N | sha256sum | head -c10)
 
+DADESUSERS=$(FULL_NAME+USERNAME)
+
 echo "Creant usuari ${USERNAME}"
 useradd -c "${FULL_NAME}" -m ${USERNAME}
 # Verifica si el usuario fue creado correctamente
@@ -43,5 +45,7 @@ sudo chage -d 0 ${USERNAME}
 echo "Usuari ${USERNAME} creat correctament"
 echo "Contraseña: ${PASSWORD}"
 echo "Host: ${HOSTNAME}"
+
+echo "'${FULL_NAME}'  ${USERNAME}" >> users.txt
 
 exit 0
