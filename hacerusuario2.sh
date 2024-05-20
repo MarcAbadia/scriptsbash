@@ -9,18 +9,10 @@ fi
 
 #parametros obligatorios
 
-if [[ ${#} -ne 2 ]]
-then
-    echo "has d'introduir 2 parametres"
-    exit 1
-fi
+read -p "Introduce el nombre completo: " FULL_NAME
+read -p "Introduce el nombre de usuario : " USERNAME
 
-#
-FULL_NAME=${1}
-USERNAME=${2}
 PASSWORD=$(date +%s%N | sha256sum |head -c10)
-echo "${PASSWORD}"
- read -p "Contraseña: " PASSWORD
 
 echo "Creant usuari ${USERNAME}"
 useradd -c  "${FULL_NAME}" -m ${USERNAME}
@@ -30,7 +22,7 @@ then
     echo "Error al crear el usuari"
     exit 1
 fi
-echo "$(USERNAME):${PASSWORD}" | chpasswd
+echo "${USERNAME}:${PASSWORD}" | chpasswd
 
 if [[ ${?} -ne 0 ]]
 then
@@ -38,7 +30,7 @@ then
     exit 1
 fi
 
-
+passwd -e ${USERNAME}
 
 echo "Usuari ${USERNAME} creat correctament"
 echo "Contraseña: ${PASSWORD}"
