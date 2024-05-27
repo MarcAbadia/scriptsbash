@@ -45,6 +45,6 @@ echo "Usuari ${USERNAME} creat correctament"
 echo "Contraseña: ${PASSWORD}"
 echo "Host: ${HOSTNAME}"
 
-echo "'${FULL_NAME}'  ${USERNAME}" >> users.txt
+echo " Nombre: ${FULL_NAME}'  Usuario: ${USERNAME}  Contraseña: ${PASSWORD}"  >> users.txt
 
 exit 0
