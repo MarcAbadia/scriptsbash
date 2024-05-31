@@ -8,7 +8,7 @@ then
 fi
 
 QUANTS=${1}
-URL="https://www.random.org/integers/?num=${QUANTS}&min=1&max=100&col=1&base=10&format=plain&rnd=new"
+URL="https://php.enguillem.es/random.php?num=${QUANTS}&min=1&max=100&col=1&base=10&format=plain&rnd=new"
 
 echo ${URL}
 NUMEROS=$(curl ${URL})
