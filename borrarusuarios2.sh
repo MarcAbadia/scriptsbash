@@ -43,4 +43,8 @@ else
     echo "El usuario ${USER_NAME} ha sido eliminado."
 fi
 
+echo " Usuario eliminado: ${USER_NAME}" >> users/userseliminados.txt
+
+
+
 exit 0
